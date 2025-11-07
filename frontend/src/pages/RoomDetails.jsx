@@ -240,7 +240,7 @@ const RoomDetails = () => {
             </div>
 
             {/* Admin Actions */}
-            {user && (
+            {user && user.email === 'admin@roombook.com' &&(
               <div className="card p-6">
                 <h3 className="font-semibold mb-4">Admin Actions</h3>
                 <Link
@@ -249,9 +249,13 @@ const RoomDetails = () => {
                 >
                   Add New Room
                 </Link>
-                <button className="btn-secondary w-full">
+                <Link
+                to="/admin/rooms"
+                 className="btn-secondary w-full text-center block">
+              
                   Manage Rooms
-                </button>
+                
+                </Link>
               </div>
             )}
           </div>
